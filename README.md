@@ -17,7 +17,7 @@ This repository contains an end-to-end Machine Learning project that predicts Ca
 
 ### **1. Minimalist Valuation Interface**
 The UI allows users to input neighborhood metrics (Median Income, House Age, geographic coordinates, etc.) to trigger real-time inference.
-> ![Interface Screenshot](assets/form.png) *(Note: Upload your screenshot to an 'assets' folder and link it here)*
+> ![Interface Screenshot](assets/form.png) 
 
 ### **2. Dynamic Market Analytics**
 The app doesn't just return a number; it generates a live **Seaborn density plot** to provide context, showing where the prediction sits relative to the broader California housing market.
