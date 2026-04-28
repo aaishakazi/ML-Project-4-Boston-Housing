@@ -80,6 +80,32 @@ def predict():
         prediction = model.predict(input_df)[0]
         predicted_val = prediction * 100000
 
+        # GETTING IMPORTANT FEATURE 
+
+        # Get importances and map them to feature names
+        importances = model.feature_importances_
+        feat_importance_dict = dict(zip(features, importances))
+        
+        # Get the top contributing factor
+        top_feature = max(feat_importance_dict, key=feat_importance_dict.get)
+        # Simple mapping for better readability
+        feature_names_clean = {
+            'MedInc': 'Median Neighborhood Income',
+            'HouseAge': 'Median House Age',
+            'AveRooms': 'Average Rooms per Dwelling',
+            'AveBedrms': 'Average Bedrooms per Dwelling',
+            'Population': 'Block Population',
+            'AveOccup': 'Average House Occupancy',
+            'Latitude': 'Latitude Coordinates',
+            'Longitude': 'Longitude Coordinates',
+            'RoomsPerHousehold': 'Room Density per Household',
+            'BedroomsPerRoom': 'Bedroom-to-Room Ratio',
+            'Distance_to_Nearest_Hub': 'Proximity to Economic Hub',
+            'IncPerOcc': 'Income per Resident',
+            'Wealth_Location_Score': 'Geographic Wealth Index'
+        }
+        reason = feature_names_clean.get(top_feature, top_feature)
+
         # GRAPH 
         plt.figure(figsize=(8, 4))
         # We'll use a representative sample of house prices (approximate distribution)
@@ -104,6 +130,7 @@ def predict():
 
         return render_template('home.html', 
                                prediction_text=f'Estimated Value: ${predicted_val:,.2f}',
+                               top_reason=f"This valuation was primarily driven by: {reason}",
                                plot_url=plot_url)
     except Exception as e:
         return render_template('home.html', prediction_text=f"Error: {str(e)}")

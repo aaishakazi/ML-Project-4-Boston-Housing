@@ -26,9 +26,22 @@
             <button type="submit" class="btn btn-primary btn-block btn-large">Estimate Value</button>
         </form>
 
+        <script>
+            document.getElementById('prediction-form').onsubmit = function() {
+                const btn = document.getElementById('submit-btn');
+                btn.innerHTML = "Calculating Valuation...";
+                btn.style.opacity = "0.7";
+                btn.style.cursor = "not-allowed";
+                btn.disabled = true;
+            };
+        </script>
+
         <br>
         <div class="result">
             <h3>{{ prediction_text }}</h3>
+            <p style="font-style: italic; color: #7f8c8d; font-size: 0.9em;">
+                {{ top_reason }}
+            </p>
             {% if plot_url %}
                 <div class="analytics">
                     <img src="data:image/png;base64,{{ plot_url }}" alt="Market Analytics" style="max-width: 100%; border-radius: 10px; margin-top: 20px;">
