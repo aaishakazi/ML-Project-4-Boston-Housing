@@ -2,7 +2,7 @@
 
 This repository contains an end-to-end Machine Learning project that predicts California property values. Model trained in VSCode and then moved to a containerized Flask application deployed on Hugging Face Spaces.
 
-[See Live Demo on Hugging Face](https://aaisha08-housing-price-predictor.hf.space) You can check it out
+[Test it on Hugging Face](https://aaisha08-housing-price-predictor.hf.space) 
 
 ## 🛠️ Tech Stack
 - **Languages:** Python 3.11
