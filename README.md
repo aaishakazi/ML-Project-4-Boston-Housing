@@ -9,7 +9,7 @@ This repository contains an end-to-end Machine Learning project that predicts Ca
 - **ML Framework:** XGBoost, Scikit-learn
 - **API/Web:** Flask, Gunicorn, Jinja2
 - **Data Viz:** Matplotlib, Seaborn
-- **DevOps:** Docker, GitHub Actions (optional)
+- **DevOps:** Docker
 - **Deployment:** Hugging Face Spaces
 
 
