@@ -1,3 +1,35 @@
-<h1>
-Welcome to the Boston Housing Price Prediction App!
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login">
+        <h1>House Value Estimator</h1>
+        <p>Enter neighborhood metrics to get an AI-powered valuation.</p>
+
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="grid-container">
+                <input type="text" name="MedInc" placeholder="Median Income" required="required" />
+                <input type="text" name="HouseAge" placeholder="House Age" required="required" />
+                <input type="text" name="AveRooms" placeholder="Average Rooms" required="required" />
+                <input type="text" name="AveBedrms" placeholder="Average Bedrooms" required="required" />
+                <input type="text" name="Population" placeholder="Population" required="required" />
+                <input type="text" name="AveOccup" placeholder="Average Occupancy" required="required" />
+                <input type="text" name="Latitude" placeholder="Latitude" required="required" />
+                <input type="text" name="Longitude" placeholder="Longitude" required="required" />
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block btn-large">Estimate Value</button>
+        </form>
+
+        <br>
+        <div class="result">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+    </div>
+</body>
+</html>
