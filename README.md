@@ -2,7 +2,7 @@
 
 This repository contains an end-to-end Machine Learning project that predicts California property values. Model trained in VSCode and then moved to a containerized Flask application deployed on Hugging Face Spaces.
 
-![Live Demo](https://aaisha08-housing-price-predictor.hf.space)
+[Live Demo](https://aaisha08-housing-price-predictor.hf.space) You can check it out
 
 ## 🛠️ Tech Stack
 - **Languages:** Python 3.11
@@ -38,9 +38,15 @@ Unlike standard baseline models, this project utilizes custom transformers to en
 
 ## 📁 Repository Structure
 ├── app.py              # Main Flask Application
+
 ├── model_features.pkl  # Metadata for feature alignment
+
 ├── housing_model.pkl   # Serialized XGBoost model
+
 ├── static/             # CSS 
+
 ├── templates/          # HTML Templates
+
 ├── Dockerfile          # Container configuration
+
 └── requirements.txt    # Production dependencies
